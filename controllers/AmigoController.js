@@ -2,7 +2,7 @@ const AmigoService = require('../services/AmigoService.js');
 const {Amigo} = require('../models');
 
 class AmigoController {
-    constructor () {
+    constructor() {
         this.amigoService = new AmigoService(Amigo);
     }
 
@@ -49,11 +49,15 @@ class AmigoController {
         res.redirect('/amigos');
     }
 
-    exibirJson = async (req,res) => {
+    exibirJson = async (req, res) => {
         const data = await this.amigoService.getAmigosJson();
 
         res.status(200).json(data);
     } 
+
+    login = async (req, res) => {
+
+    }
 }
 
 module.exports = AmigoController;
