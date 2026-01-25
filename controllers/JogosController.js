@@ -1,6 +1,7 @@
 const JogosService = require('../services/JogosService.js');
 const AmigoService = require('../services/AmigoService.js');
-const {Jogo, Amigo} = require('../models');
+const {Amigo} = require('../models');
+const {Jogo} = require('../models');
 
 class JogosController {
     constructor () {
@@ -51,6 +52,13 @@ class JogosController {
     excluirJogo = async (req, res) => {
         await this.jogoService.deleteJogo({ id: req.params.id });
         res.redirect('/jogos');
+    }
+
+    // jogos/json
+    exibirJson = async (req,res) => {
+        const data = await this.jogoService.getJogosJson();
+
+        res.status(200).json(data);
     }
 }
 

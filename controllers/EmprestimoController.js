@@ -1,7 +1,7 @@
 const EmprestimoService = require('../services/EmprestimosService.js');
 const AmigoService = require('../services/AmigoService.js');
 const JogosService = require('../services/JogosService.js');
-const {Emprestimo, Amigo, Jogo} = require('../models');
+const { Amigo, Jogo, Emprestimo } = require('../models');
 
 class EmprestimoController {
     constructor () {
@@ -39,8 +39,14 @@ class EmprestimoController {
 
     // /emprestimos/excluir/:id
     excluirEmprestimo = async (req, res) => {
-        await this.emprestimoService.excluirEmprestimo({ where: { id: req.params.id } });
+        await this.emprestimoService.excluirEmprestimo({ id: req.params.id });
         res.redirect('/emprestimos');
+    }
+
+    exibirJson = async (req, res) => {
+        const data = await this.emprestimoService.getEmprestimosJson();
+
+        return res.status(200).json(data);
     }
 }
 

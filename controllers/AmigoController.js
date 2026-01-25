@@ -8,7 +8,7 @@ class AmigoController {
 
     // /amigos
     exibirAmigos = async (req, res) => {
-        this.amigoService.getAllAmigos();
+        const amigos = await this.amigoService.getAllAmigos();
         res.render('amigos/index', { amigos });
     }
 
@@ -17,6 +17,12 @@ class AmigoController {
 
     // /amigos/novo
     adicionarAmigos = async (req, res) => {
+        if(!req.body) {
+            console.log("Conteudo: " + req.body);
+        } else {
+            console.log(req.body);
+        }
+
         const { nome, email } = req.body;
         await this.amigoService.createAmigo({nome, email})
         res.redirect('/amigos');
@@ -24,6 +30,7 @@ class AmigoController {
 
     // /amigos/editar/:id
     exibirEditarAmigo = async (req, res) => {
+        console.log(req.params.id);
         const amigo = await this.amigoService.getAmigoById(req.params.id);
         if (!amigo) return res.status(404).send('Amigo não encontrado.');
         res.render('amigos/editar', { amigo });
@@ -41,6 +48,12 @@ class AmigoController {
         await this.amigoService.deleteAmigo({ id: req.params.id });
         res.redirect('/amigos');
     }
+
+    exibirJson = async (req,res) => {
+        const data = await this.amigoService.getAmigosJson();
+
+        res.status(200).json(data);
+    } 
 }
 
 module.exports = AmigoController;
