@@ -2,15 +2,12 @@ const express = require('express');
 const AmigoController = require('./controllers/AmigoController');
 const JogosController = require('./controllers/JogosController');
 const EmprestimoController = require('./controllers/EmprestimoController');
-const UsuarioController = require('./controllers/UsuarioController');
-const customJwtMiddleware = require('./middlewares/customJwtMiddleware');
 
 const router = express.Router();
 
 const amigoController = new AmigoController();
 const jogosController = new JogosController();
 const emprestimoController = new EmprestimoController();
-const usuarioController = new UsuarioController();
 
 router.get('/amigos/pdf', amigoController.gerarPdf);
 router.get('/amigos/json', amigoController.exibirJson);
