@@ -6,9 +6,27 @@
     <meta charset="UTF-8" />
     <title>Editar Amigo</title>
     <link rel="stylesheet" href="/css/styles.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JS (animações, collapse, etc) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!-- Seu CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
 </head>
 
 <body>
+    <header class="steam-header d-flex align-items-center">
+        <img
+            src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg"
+            alt="Steam Logo"
+            class="steam-logo"
+        />
+        <span class="steam-title">Amigos Steam</span>
+    </header>
+
     <h1>Editar Amigo</h1>
     <form action="/amigos/editar/<%= amigo.id %>" method="POST">
         <p><label>Nome:</label><br /><input name="nome" value="<%= amigo.nome %>" required /></p>
