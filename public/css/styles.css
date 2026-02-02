@@ -18,6 +18,7 @@
   --text-title: #ffffff;
 
   --accent: #66c0f4;
+  --save: #78c94a;
   --danger: #c23c2a;
 }
 
@@ -27,6 +28,7 @@ body {
   color: var(--text-main);
   min-height: 100vh;
   padding: 40px;
+  overflow: hidden;
 }
 
 /* CONTAINER */
@@ -50,6 +52,30 @@ a {
 
 a:hover {
   color: #ffffff;
+}
+
+button {
+  border-color: #1a2a3a;
+  background-color: #1a2a3a;
+  color: var(--save);
+  cursor: pointer;
+  width: 80px;
+  font-weight: 500;
+  margin-right: 20px;
+}
+
+button:hover {
+  color: #ffffff;
+}
+
+.button-e{
+  border-color: #1a2a3a;
+  background-color: #1a2a3a;
+  color: var(--danger);
+  cursor: pointer;
+  width: 80px;
+  font-weight: 500;
+  margin-left: 8px;
 }
 
 /* CARD (biblioteca Steam feelings) */

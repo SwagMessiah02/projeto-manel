@@ -15,6 +15,8 @@
     <!-- Seu CSS -->
     <link rel="stylesheet" href="/css/styles.css">
 
+    <link rel="icon" href="/img/steam_icon.ico"/>
+
 </head>
 
 <body>
@@ -29,8 +31,8 @@
 
     <h1>Editar Amigo</h1>
     <form action="/amigos/editar/<%= amigo.id %>" method="POST">
-        <p><label>Nome:</label><br /><input name="nome" value="<%= amigo.nome %>" required /></p>
-        <p><label>Email:</label><br /><input name="email" value="<%= amigo.email %>" required /></p>
+        <p><label><h5>Nome:</h5></label><br /><input name="nome" value="<%= amigo.nome %>" required /></p>
+        <p><label><h5>Email:</h5></label><br /><input name="email" value="<%= amigo.email %>" required /></p>
         <p><button type="submit">Salvar</button> <a href="/amigos">Cancelar</a></p>
     </form>
 </body>

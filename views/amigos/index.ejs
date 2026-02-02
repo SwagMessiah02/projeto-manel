@@ -15,6 +15,8 @@
     <!-- Seu CSS -->
     <link rel="stylesheet" href="/css/styles.css">
 
+    <link rel="icon" href="/img/steam_icon.ico"/>
+
 </head>
 
 <body>
@@ -55,7 +57,7 @@
                     <td>
                         <a href="/amigos/editar/<%= a.id %>">Editar</a>
                         <form action="/amigos/excluir/<%= a.id %>" method="POST" style="display:inline;">
-                            <button type="submit" >Excluir</button>
+                            <button class="button-e" type="submit" >Excluir</button>
                         </form>
                     </td>
                 </tr>

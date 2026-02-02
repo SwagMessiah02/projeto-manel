@@ -15,6 +15,8 @@
     <!-- Seu CSS -->
     <link rel="stylesheet" href="/css/styles.css">
 
+    <link rel="icon" href="/img/steam_icon.ico"/>
+
 </head>
 
 <body>
@@ -29,11 +31,11 @@
 
     <h1>Novo Jogo</h1>
     <form action="/jogos/novo" method="POST">
-        <p><label>Título:</label><br /><input name="titulo" required /></p>
-        <p><label>Plataforma:</label><br /><input name="plataforma" required placeholder="Ex.: PC,
+        <p><label><h5>Título:</h5></label><br /><input name="titulo" required /></p>
+        <p><label><h5>Plataforma:</h5></label><br /><input name="plataforma" required placeholder="Ex.: PC,
 PS5, Switch" /></p>
         <p>
-            <label>Dono (Amigo):</label><br />
+            <label><h5>Dono (Amigo):</h5></label><br />
             <select name="amigoId" required>
                 <% amigos.forEach(a => { %>
                     <option value="<%= a.id %>">

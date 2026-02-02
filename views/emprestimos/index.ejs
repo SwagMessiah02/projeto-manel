@@ -14,6 +14,8 @@
             <!-- Seu CSS -->
             <link rel="stylesheet" href="/css/styles.css">
 
+            <link rel="icon" href="/img/steam_icon.ico"/>
+
         </head>
         <body>
             <header class="steam-header d-flex align-items-center">
@@ -45,7 +47,7 @@
                             <td><%= e.dataFim ? e.dataFim : 'em aberto' %></td>
                             <td>
                                 <form action="/emprestimos/excluir/<%= e.id %>" method="POST" style="display:inline;">
-                                    <button type="submit">Excluir</button>
+                                    <button class="button-e" type="submit">Excluir</button>
                                 </form>
                             </form>
                             </td>
